@@ -14,46 +14,16 @@ class HeroViewController: UIViewController {
             imageHero.layer.cornerRadius = 10
         }
     }
-    @IBOutlet weak var nameLabel: UILabel! {
-        didSet {
-            nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
-            nameLabel.textColor = .white
-        }
-    }
-    @IBOutlet weak var powerstatsLabel: UILabel! {
-        didSet {
-            powerstatsLabel.numberOfLines = 0
-            powerstatsLabel.font = UIFont.boldSystemFont(ofSize: 15)
-            powerstatsLabel.textColor = .white
-        }
-    }
-    @IBOutlet weak var appearanceLabel: UILabel! {
-        didSet {
-            appearanceLabel.numberOfLines = 0
-            appearanceLabel.font = UIFont.boldSystemFont(ofSize: 15)
-            appearanceLabel.textColor = .white
-        }
-    }
-    @IBOutlet weak var biographyLabel: UILabel! {
-        didSet {
-            biographyLabel.numberOfLines = 0
-            biographyLabel.font = UIFont.boldSystemFont(ofSize: 15)
-            biographyLabel.textColor = .white
-        }
-    }
-    @IBOutlet weak var workLabel: UILabel! {
-        didSet {
-            workLabel.numberOfLines = 0
-            workLabel.font = UIFont.boldSystemFont(ofSize: 15)
-            workLabel.textColor = .white
-        }
-    }
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var powerstatsLabel: UILabel!
+    @IBOutlet weak var appearanceLabel: UILabel!
+    @IBOutlet weak var biographyLabel: UILabel!
+    @IBOutlet weak var workLabel: UILabel!
     
     var superHeroModel: SuperHeroModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
         fetchImage()
     }
     

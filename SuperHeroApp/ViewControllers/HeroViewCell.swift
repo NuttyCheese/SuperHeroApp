@@ -13,12 +13,7 @@ class HeroViewCell: UICollectionViewCell {
             heroImage.layer.cornerRadius = 10
         }
     }
-    @IBOutlet weak var nameLabel: UILabel! {
-        didSet {
-            nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
-            nameLabel.textColor = .white
-        }
-    }
+    @IBOutlet weak var nameLabel: UILabel!
 
 
     func configure(with index: SuperHeroModel?) {
