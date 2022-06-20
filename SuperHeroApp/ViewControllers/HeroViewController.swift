@@ -32,7 +32,9 @@ class HeroViewController: UIViewController {
             guard let imageData = ImageManager.shared.fetchImage(from: self.superHeroModel.images.lg) else { return }
             DispatchQueue.main.async {
                 self.imageHero.image = UIImage(data: imageData)
+                
                 self.nameLabel.text = self.superHeroModel.name
+                
                 self.powerstatsLabel.text = "Статистика мощности: \n    Интеллект: \(self.superHeroModel.powerstats.intelligence) \n    Прочность: \(self.superHeroModel.powerstats.strength) \n    Скорость: \(self.superHeroModel.powerstats.speed) \n    Живучесть: \(self.superHeroModel.powerstats.durability) \n    Сила: \(self.superHeroModel.powerstats.power) \n    Командная работа: \(self.superHeroModel.powerstats.combat)"
                 
                 self.appearanceLabel.text = "Внешний вид: \n    Пол: \(self.superHeroModel.appearance.gender) \n    Рост: \(self.superHeroModel.appearance.height.last ?? "_") \n    Вес: \(self.superHeroModel.appearance.weight.last ?? "_")"
