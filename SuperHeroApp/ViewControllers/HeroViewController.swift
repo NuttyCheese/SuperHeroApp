@@ -8,7 +8,7 @@
 import UIKit
 
 class HeroViewController: UIViewController {
-    @IBOutlet weak var imageHero: UIImageView! {
+    @IBOutlet weak var imageHero: HeroImageView! {
         didSet {
             imageHero.contentMode = .scaleAspectFill
             imageHero.layer.cornerRadius = 10
@@ -28,22 +28,16 @@ class HeroViewController: UIViewController {
     }
     
     private func fetchImage() {
-        DispatchQueue.global().async {
-            guard let imageData = ImageManager.shared.fetchImage(from: self.superHeroModel.images.lg) else { return }
-            DispatchQueue.main.async {
-                self.imageHero.image = UIImage(data: imageData)
-                
-                self.nameLabel.text = self.superHeroModel.name
-                
-                self.powerstatsLabel.text = "Статистика мощности: \n    Интеллект: \(self.superHeroModel.powerstats.intelligence) \n    Прочность: \(self.superHeroModel.powerstats.strength) \n    Скорость: \(self.superHeroModel.powerstats.speed) \n    Живучесть: \(self.superHeroModel.powerstats.durability) \n    Сила: \(self.superHeroModel.powerstats.power) \n    Командная работа: \(self.superHeroModel.powerstats.combat)"
-                
-                self.appearanceLabel.text = "Внешний вид: \n    Пол: \(self.superHeroModel.appearance.gender) \n    Рост: \(self.superHeroModel.appearance.height.last ?? "_") \n    Вес: \(self.superHeroModel.appearance.weight.last ?? "_")"
-                
-                
-                self.biographyLabel.text = "Биография: \n    Полное имя: \(self.superHeroModel.biography.fullName) \n    Вторая личность: \(self.superHeroModel.biography.alterEgos) \n    Псевдоним: \(self.superHeroModel.biography.aliases.first ?? "_") \n    Первое появление: \(self.superHeroModel.biography.firstAppearance) \n    Сторона силы: \(self.superHeroModel.biography.alignment)"
-                
-                self.workLabel.text = "Работа: \n    Место работы: \(self.superHeroModel.work.occupation)"
-            }
-        }
+        nameLabel.text = superHeroModel.name
+        
+        powerstatsLabel.text = "Статистика мощности: \n    Интеллект: \(superHeroModel.powerstats.intelligence) \n    Прочность: \(superHeroModel.powerstats.strength) \n    Скорость: \(superHeroModel.powerstats.speed) \n    Живучесть: \(superHeroModel.powerstats.durability) \n    Сила: \(superHeroModel.powerstats.power) \n    Командная работа: \(superHeroModel.powerstats.combat)"
+        
+        appearanceLabel.text = "Внешний вид: \n    Пол: \(superHeroModel.appearance.gender) \n    Рост: \(superHeroModel.appearance.height.last ?? "_") \n    Вес: \(superHeroModel.appearance.weight.last ?? "_")"
+        
+        biographyLabel.text = "Биография: \n    Полное имя: \(superHeroModel.biography.fullName) \n    Вторая личность: \(superHeroModel.biography.alterEgos) \n    Псевдоним: \(superHeroModel.biography.aliases.first ?? "_") \n    Первое появление: \(superHeroModel.biography.firstAppearance) \n    Сторона силы: \(superHeroModel.biography.alignment)"
+        
+        workLabel.text = "Работа: \n    Место работы: \(superHeroModel.work.occupation)"
+        
+        imageHero.fetchImage(from: superHeroModel.images.lg)
     }
 }

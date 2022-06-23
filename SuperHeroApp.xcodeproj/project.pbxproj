@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896651EC28649EA600F7C1C4 /* HeroImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896651EB28649EA600F7C1C4 /* HeroImageView.swift */; };
 		897162D6285F39BD004BA9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897162D5285F39BD004BA9AF /* AppDelegate.swift */; };
 		897162D8285F39BD004BA9AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897162D7285F39BD004BA9AF /* SceneDelegate.swift */; };
 		897162DD285F39BD004BA9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897162DB285F39BD004BA9AF /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		896651EB28649EA600F7C1C4 /* HeroImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeroImageView.swift; path = SuperHeroApp/Services/HeroImageView.swift; sourceTree = SOURCE_ROOT; };
 		897162D2285F39BD004BA9AF /* SuperHeroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHeroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		897162D5285F39BD004BA9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		897162D7285F39BD004BA9AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		897162F6285F4A85004BA9AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				896651EB28649EA600F7C1C4 /* HeroImageView.swift */,
 				897162DE285F39BF004BA9AF /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -200,6 +203,7 @@
 			files = (
 				897162EA285F39D9004BA9AF /* SuperHeroModel.swift in Sources */,
 				897162F2285F4298004BA9AF /* HeroViewController.swift in Sources */,
+				896651EC28649EA600F7C1C4 /* HeroImageView.swift in Sources */,
 				897162EE285F4258004BA9AF /* HeroListViewController.swift in Sources */,
 				897162EC285F39E4004BA9AF /* NetworkManager.swift in Sources */,
 				897162D6285F39BD004BA9AF /* AppDelegate.swift in Sources */,

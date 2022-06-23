@@ -8,23 +8,15 @@
 import UIKit
 
 class HeroViewCell: UICollectionViewCell {
-    @IBOutlet weak var heroImage: UIImageView! {
+    @IBOutlet weak var heroImage: HeroImageView! {
         didSet {
             heroImage.layer.cornerRadius = 10
         }
     }
     @IBOutlet weak var nameLabel: UILabel!
 
-
     func configure(with index: SuperHeroModel?) {
         nameLabel.text = index?.name
-        DispatchQueue.global().async {
-            guard let stringUrl = index?.images.sm else { return }
-            guard let imageUrl = URL(string: stringUrl) else { return }
-            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
-            DispatchQueue.main.async {
-                self.heroImage.image = UIImage(data: imageData)
-            }
-        }
+        heroImage.fetchImage(from: index?.images.sm ?? "")
     }
 }
