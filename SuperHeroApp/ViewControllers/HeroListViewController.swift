@@ -37,9 +37,14 @@ class HeroListViewController: UICollectionViewController, UISearchResultsUpdatin
     }
     
     private func fetchData() {
-        NetworkManager.shared.fetchData(with: Link.heroUrl.rawValue) { model in
-            self.superHeroModel = model
-            self.collectionView.reloadData()
+        Task {
+            do {
+                let heroModel = try await NetworkManager.shared.fetchData(with: Link.heroUrl.rawValue)
+                superHeroModel = heroModel
+                collectionView.reloadData()
+            }catch {
+                print(error)
+            }
         }
     }
     
